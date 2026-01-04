@@ -1,4 +1,8 @@
-function TodoH1() {
-  return <h1>Tareas completadas 3 de 5</h1>;
+function TodoH1({ completedTasks, totalTasks }) {
+  return (
+    <h1>
+      Tareas completadas {completedTasks} de {totalTasks}
+    </h1>
+  );
 }
 export { TodoH1 };

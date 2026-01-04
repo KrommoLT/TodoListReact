@@ -1,8 +1,8 @@
-function TodoItem() {
+function TodoItem(props) {
   return (
     <li>
       <span>V</span>
-      <p>tarea pendiente</p>
+      <p>{props.Text}</p>
       <span>X</span>
     </li>
   );
