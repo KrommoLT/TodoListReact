@@ -1,0 +1,12 @@
+.h2 {
+  text-align: center;
+  color: #9e78cf;
+  font-size: 1rem;
+  padding: 4px;
+}
+
+@media (max-width: 1024px) {
+  .h2 {
+    font-size: 1rem;
+  }
+}

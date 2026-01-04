@@ -1,0 +1,37 @@
+.li {
+  width: 800px;
+  height: 50%;
+  padding: 10px;
+  list-style: none;
+  margin-left: -50px;
+  margin-top: 10px;
+}
+.p {
+  height: 75px;
+  width: 98%;
+  font-size: 1rem;
+  margin: 0 20px;
+  background-color: #15101c;
+  border-radius: 20px;
+  color: #9e78cf;
+  font-size: 1rem;
+  font-family: inter, sans-serif;
+  text-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .li {
+    width: 85vw;
+    margin-bottom: -40px;
+    padding: 50px;
+    margin-left: -70px;
+  }
+  .p {
+    font-size: 1rem;
+    height: 100px;
+  }
+}
