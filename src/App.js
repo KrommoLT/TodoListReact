@@ -8,11 +8,11 @@ import { TodoItem } from "./TodoItem";
 import "./App.css";
 
 const defaultTodos = [
-  { Text: "Tarea 1", completedTasks: false },
-  { Text: "Tarea 2", completedTasks: false },
-  { Text: "Tarea 3", completedTasks: false },
-  { Text: "Tarea 4", completedTasks: false },
-  { Text: "Tarea 5", completedTasks: false },
+  { Text: "Tarea asdasdasdasdaaaaaaaaaaaaaaaaaa", completed: true },
+  { Text: "Tarea 2", completed: false },
+  { Text: "Tarea 3", completed: false },
+  { Text: "Tarea 4", completed: false },
+  { Text: "Tarea 5", completed: false },
 ];
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
             <TodoItem
               key={todo.Text}
               Text={todo.Text}
-              completedTasks={todo.completedTasks}
+              completed={todo.completed}
             />
           ))}
         </TodoList>

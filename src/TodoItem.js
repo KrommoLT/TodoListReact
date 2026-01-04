@@ -3,11 +3,11 @@ import "./TodoItem.css";
 function TodoItem(props) {
   return (
     <li className="li">
-      <p className="p">
+      <p className={`text ${props.completed && "text-completed"}  `}>
         {props.Text}
-        <span className="span">V</span>
-        <span className="span">X</span>
       </p>
+      <span className={`span ${props.completed && "span-activate"}`}>V</span>
+      <span className={`span span-delete`}>X</span>
     </li>
   );
 }
