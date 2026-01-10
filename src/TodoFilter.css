@@ -1,34 +1,24 @@
-.input {
-  width: 700px;
-  height: 60px;
-  border-radius: 10px;
-  border: solid 1px #9e78cf;
-  background-color: #d9d9d9;
-  padding: 0px 20px;
-  font-size: 2rem;
+.TodoFilter {
+  background: #1d1825;
+  border-radius: 15px;
+  border: 2px solid #3e1671;
+  margin: 0 24px;
+  height: 64px;
+  width: 100%;
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: "Montserrat";
+  font-weight: 400;
+  color: #1e1e1f;
+  box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
 }
 
-@media (max-width: 768px) {
-  .input {
-    width: 75vw;
-    height: 50px;
-    font-size: 1.5rem;
-    margin-left: 30px;
-  }
+.TodoFilter::placeholder {
+  color: #a5a5a5;
+  font-family: "Montserrat";
+  font-weight: 400;
 }
-@media (max-width: 320px) {
-  .input {
-    width: 65vw;
-    height: 40px;
-    font-size: 1.2rem;
-    margin-left: 30px;
-  }
-}
-@media (max-width: 425px) {
-  .input {
-    width: 65vw;
-    height: 50px;
-    font-size: 1.5rem;
-    margin-left: 30px;
-  }
+
+.TodoFilter:focus {
+  background: #d9d9d9;
 }

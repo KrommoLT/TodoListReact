@@ -4,7 +4,7 @@ function CreateTodoButton() {
   return (
     <button
       type="submit"
-      className="button"
+      className="CreateTodoButton"
       onClick={(event) => {
         console.log("Aquí puedes crear una nueva tarea!");
         console.log(event);

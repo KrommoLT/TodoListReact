@@ -5,7 +5,7 @@ function TodoFilter({ searchValue, setSearchValue }) {
   return (
     <input
       placeholder="Tarea"
-      className="input"
+      className="TodoFilter"
       value={searchValue}
       onChange={(event) => {
         setSearchValue(event.target.value);
