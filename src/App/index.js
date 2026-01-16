@@ -1,11 +1,12 @@
 import React from "react";
 
-import { TodoH1 } from "./TodoH1";
-import { TodoFilter } from "./TodoFilter";
-import { TodoList } from "./TodoList";
-import { CreateTodoButton } from "./CreateTodoButton";
-import { TodoItem } from "./TodoItem";
+import { TodoH1 } from "../TodoH1/index";
+import { TodoFilter } from "../TodoFilter/index";
+import { TodoList } from "../TodoList/index";
+import { CreateTodoButton } from "../CreateTodoButton/CreateTodoButton";
+import { TodoItem } from "../TodoItem/index";
 import "./App.css";
+import { useLocalStorage } from "../App/useLocalStorage";
 
 // const defaultTodos = [
 //   datos iniciales de las tareas
@@ -18,31 +19,6 @@ import "./App.css";
 
 //localStorage.setItem("TODOS_V1", JSON.stringify(defaultTodos)); //crea las tareas en el localStorage
 //localStorage.removeItem("TODOS_V1"); //elimina las tareas del localStorage
-
-function useLocalStorage(itemName, initialValue) {
-  //hook personalizado para manejar el localStorage
-
-  const localStorageItem = localStorage.getItem(itemName); //obtiene las tareas del localStorage
-
-  let parsedItem;
-
-  if (!localStorageItem) {
-    localStorage.setItem(itemName, JSON.stringify(initialValue)); //si no hay tareas en el localStorage, se crean con los datos iniciales
-    parsedItem = initialValue;
-  } else {
-    parsedItem = JSON.parse(localStorageItem); //si hay tareas en el localStorage, se parsean
-  }
-
-  const [item, setItem] = React.useState(parsedItem); //estado de las tareas
-
-  const saveItem = (newItem) => {
-    //funcion para guardar las tareas en el localStorage
-    localStorage.setItem(itemName, JSON.stringify(newItem)); //guarda las tareas en el localStorage
-    setItem(newItem); //actualiza el estado de las tareas
-  };
-
-  return [item, saveItem];
-}
 
 function App() {
   const [todos, saveTodos] = useLocalStorage("TODOS_V1", []); //estado de las tareas usando el hook personalizado
