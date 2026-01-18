@@ -5,6 +5,9 @@ import { TodoList } from "../TodoList/index";
 import { CreateTodoButton } from "../CreateTodoButton/CreateTodoButton";
 import { TodoItem } from "../TodoItem/index";
 import "./App.css";
+import { TodosLoading } from "../TodosLoading/index";
+import { TodosError } from "../TodosError/index";
+import { EmptyTodos } from "../EmptyTodos/index";
 import { useLocalStorage } from "../App/useLocalStorage";
 import App from "./index";
 
@@ -30,11 +33,17 @@ function AppUi({
 
         <CreateTodoButton />
         <TodoList>
-          {loading && <p>Estamos cargando, no desesperes...</p>}
-          {error && <p>Hubo un error...</p>}
-          {!loading && !error && searchedTodos.length === 0 && (
-            <p>Crea tu primer tarea!</p>
+          {loading && (
+            <>
+              <TodosLoading />
+              <TodosLoading />
+              <TodosLoading />
+              <TodosLoading />
+              <TodosLoading />
+            </>
           )}
+          {error && <TodosError />}
+          {!loading && !error && searchedTodos.length === 0 && <EmptyTodos />}
 
           {searchedTodos.map((todo) => (
             <TodoItem
