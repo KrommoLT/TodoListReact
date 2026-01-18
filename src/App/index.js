@@ -10,13 +10,18 @@ import { AppUi } from "./AppUi";
 //   { Text: "Tarea 3", completed: false },
 //   { Text: "Tarea 4", completed: false },
 //   { Text: "Tareá 5", completed: false },
-//  ];
+// ];
 
 //localStorage.setItem("TODOS_V1", JSON.stringify(defaultTodos)); //crea las tareas en el localStorage
 //localStorage.removeItem("TODOS_V1"); //elimina las tareas del localStorage
 
 function App() {
-  const [todos, saveTodos] = useLocalStorage("TODOS_V1", []); //estado de las tareas usando el hook personalizado
+  const {
+    item: todos,
+    saveitem: saveTodos,
+    loading,
+    error,
+  } = useLocalStorage("TODOS_V1", []); //estado de las tareas usando el hook personalizado
   const [searchValue, setSearchValue] = React.useState(""); //estado del input de busqueda
 
   /*LOGICA DEL FILTRO*/
@@ -46,6 +51,8 @@ function App() {
 
   return (
     <AppUi
+      loading={loading}
+      error={error}
       completedTodos={completedTodos}
       totalTodos={totalTodos}
       searchValue={searchValue}

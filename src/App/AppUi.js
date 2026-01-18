@@ -9,6 +9,8 @@ import { useLocalStorage } from "../App/useLocalStorage";
 import App from "./index";
 
 function AppUi({
+  loading,
+  error,
   completedTodos,
   totalTodos,
   searchValue,
@@ -28,6 +30,12 @@ function AppUi({
 
         <CreateTodoButton />
         <TodoList>
+          {loading && <p>Estamos cargando, no desesperes...</p>}
+          {error && <p>Hubo un error...</p>}
+          {!loading && !error && searchedTodos.length === 0 && (
+            <p>Crea tu primer tarea!</p>
+          )}
+
           {searchedTodos.map((todo) => (
             <TodoItem
               key={todo.Text}
