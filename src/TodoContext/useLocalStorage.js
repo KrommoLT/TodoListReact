@@ -40,4 +40,16 @@ function useLocalStorage(itemName, initialValue) {
     error,
   }; //retorna el estado de las tareas y la funcion para guardarlas
 }
+// const defaultTodos = [
+//   datos iniciales de las tareas
+//   { Text: "Tarea asdasdasdasdaaaaaaaaaaaaaaaaaa", completed: true },
+//   { Text: "Tarea 2", completed: false },
+//   { Text: "Tarea 3", completed: false },
+//   { Text: "Tarea 4", completed: false },
+//   { Text: "Tareá 5", completed: false },
+// ];
+
+//localStorage.setItem("TODOS_V1", JSON.stringify(defaultTodos)); //crea las tareas en el localStorage
+//localStorage.removeItem("TODOS_V1"); //elimina las tareas del localStorage
+
 export { useLocalStorage };

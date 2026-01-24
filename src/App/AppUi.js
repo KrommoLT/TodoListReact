@@ -8,30 +8,24 @@ import "./App.css";
 import { TodosLoading } from "../TodosLoading/index";
 import { TodosError } from "../TodosError/index";
 import { EmptyTodos } from "../EmptyTodos/index";
-import { useLocalStorage } from "../App/useLocalStorage";
+import { useLocalStorage } from "../TodoContext/useLocalStorage";
 import App from "./index";
+import { TodoContext } from "../TodoContext/index";
 
-function AppUi({
-  loading,
-  error,
-  completedTodos,
-  totalTodos,
-  searchValue,
-  setSearchValue,
-  searchedTodos,
-  completeTodo,
-  deleteTodo,
-}) {
+function AppUi({}) {
+  const { loading, error, searchedTodos, completeTodo, deleteTodo, saveTodos } =
+    React.useContext(TodoContext);
   return (
     <div className="app">
       <>
         {/* fragmento para agrupar elementos sin agregar nodos extra al DOM */}
         <h1 className="h1">ToDo-List</h1>
 
-        <TodoH1 completedTasks={completedTodos} totalTasks={totalTodos} />
-        <TodoFilter searchValue={searchValue} setSearchValue={setSearchValue} />
+        <TodoH1 />
+        <TodoFilter />
 
         <CreateTodoButton />
+
         <TodoList>
           {loading && (
             <>

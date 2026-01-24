@@ -1,7 +1,10 @@
 import React from "react";
 import "./TodoFilter.css";
+import { TodoContext } from "../TodoContext/index";
 
-function TodoFilter({ searchValue, setSearchValue }) {
+function TodoFilter() {
+  const { searchValue, setSearchValue } = React.useContext(TodoContext);
+
   return (
     <input
       placeholder="Tarea"
