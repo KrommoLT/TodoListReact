@@ -11,6 +11,7 @@ function TodoProvider({ children }) {
     error,
   } = useLocalStorage("TODOS_V1", []); //estado de las tareas usando el hook personalizado
   const [searchValue, setSearchValue] = React.useState(""); //estado del input de busqueda
+  const [openModal, setOpenModal] = React.useState(true); //estado del modal para agregar tareas
 
   /*LOGICA DEL FILTRO*/
   const completedTodos = todos.filter((todo) => !!todo.completed).length; //cantidad de tareas completadas
@@ -49,6 +50,8 @@ function TodoProvider({ children }) {
         completeTodo,
         deleteTodo,
         saveTodos,
+        openModal,
+        setOpenModal,
       }}
     >
       {children}

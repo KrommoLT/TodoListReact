@@ -1,14 +1,13 @@
 import "./CreateTodoButton.css";
+import { TodoContext } from "../TodoContext/index";
 
-function CreateTodoButton() {
+function CreateTodoButton({ setOpenModal }) {
   return (
     <button
       type="submit"
       className="CreateTodoButton"
-      onClick={(event) => {
-        console.log("Aquí puedes crear una nueva tarea!");
-        console.log(event);
-        console.log(event.target);
+      onClick={() => {
+        setOpenModal((state) => !state);
       }}
     >
       +

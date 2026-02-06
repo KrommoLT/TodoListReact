@@ -11,10 +11,19 @@ import { EmptyTodos } from "../EmptyTodos/index";
 import { useLocalStorage } from "../TodoContext/useLocalStorage";
 import App from "./index";
 import { TodoContext } from "../TodoContext/index";
+import { Modal } from "../Modal/index";
 
 function AppUi({}) {
-  const { loading, error, searchedTodos, completeTodo, deleteTodo, saveTodos } =
-    React.useContext(TodoContext);
+  const {
+    loading,
+    error,
+    searchedTodos,
+    completeTodo,
+    deleteTodo,
+    saveTodos,
+    openModal,
+    setOpenModal,
+  } = React.useContext(TodoContext);
   return (
     <div className="app">
       <>
@@ -24,7 +33,7 @@ function AppUi({}) {
         <TodoH1 />
         <TodoFilter />
 
-        <CreateTodoButton />
+        <CreateTodoButton setOpenModal={setOpenModal} />
 
         <TodoList>
           {loading && (
@@ -49,6 +58,7 @@ function AppUi({}) {
             />
           ))}
         </TodoList>
+        {openModal && <Modal>agragar todos</Modal>}
       </>
     </div>
   );
