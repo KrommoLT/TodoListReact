@@ -12,6 +12,7 @@ import { useLocalStorage } from "../TodoContext/useLocalStorage";
 import App from "./index";
 import { TodoContext } from "../TodoContext/index";
 import { Modal } from "../Modal/index";
+import { TodoForm } from "../TodoForm";
 
 function AppUi({}) {
   const {
@@ -58,7 +59,11 @@ function AppUi({}) {
             />
           ))}
         </TodoList>
-        {openModal && <Modal>agragar todos</Modal>}
+        {openModal && (
+          <Modal>
+            <TodoForm />
+          </Modal>
+        )}
       </>
     </div>
   );

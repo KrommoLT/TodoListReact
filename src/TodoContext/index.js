@@ -11,7 +11,7 @@ function TodoProvider({ children }) {
     error,
   } = useLocalStorage("TODOS_V1", []); //estado de las tareas usando el hook personalizado
   const [searchValue, setSearchValue] = React.useState(""); //estado del input de busqueda
-  const [openModal, setOpenModal] = React.useState(true); //estado del modal para agregar tareas
+  const [openModal, setOpenModal] = React.useState(false); //estado del modal para agregar tareas
 
   /*LOGICA DEL FILTRO*/
   const completedTodos = todos.filter((todo) => !!todo.completed).length; //cantidad de tareas completadas
@@ -23,6 +23,16 @@ function TodoProvider({ children }) {
     const searchText = searchValue.toLocaleLowerCase();
     return todoText.includes(searchText); //se usa para buscar tareas
   });
+  /*LOGICA DE TODOS*/
+  const addTodo = (text) => {
+    //
+    const newTodos = [...todos];
+    newTodos.push({
+      text,
+      completed: false,
+    });
+    saveTodos(newTodos);
+  };
 
   const completeTodo = (text) => {
     const newTodos = [...todos]; //copia del array de tareas
@@ -52,6 +62,7 @@ function TodoProvider({ children }) {
         saveTodos,
         openModal,
         setOpenModal,
+        addTodo,
       }}
     >
       {children}
