@@ -31,7 +31,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://KrommoLT.github.io/TodoListReact",
+  "homepage": "https://krommolt.github.io/TodoListReact",
   "devDependencies": {
     "gh-pages": "^6.3.0"
   }
