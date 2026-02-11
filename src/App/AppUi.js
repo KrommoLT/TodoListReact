@@ -29,9 +29,10 @@ function AppUi({}) {
     <div className="app">
       <>
         {/* fragmento para agrupar elementos sin agregar nodos extra al DOM */}
-        <h1 className="h1">ToDo-List</h1>
 
+        <h1 className="h1">ToDo-List</h1>
         <TodoH1 />
+
         <TodoFilter />
 
         <CreateTodoButton setOpenModal={setOpenModal} />
