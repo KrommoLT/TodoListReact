@@ -19,7 +19,7 @@ function TodoProvider({ children }) {
 
   const searchedTodos = todos.filter((todo) => {
     //filtra las tareas segun el valor del input de busqueda
-    const todoText = todo.Text.toLowerCase();
+    const todoText = (todo.Text || todo.text || "").toLowerCase();
     const searchText = searchValue.toLocaleLowerCase();
     return todoText.includes(searchText); //se usa para buscar tareas
   });
@@ -28,7 +28,7 @@ function TodoProvider({ children }) {
     //
     const newTodos = [...todos];
     newTodos.push({
-      text,
+      Text: text,
       completed: false,
     });
     saveTodos(newTodos);
@@ -36,16 +36,24 @@ function TodoProvider({ children }) {
 
   const completeTodo = (text) => {
     const newTodos = [...todos]; //copia del array de tareas
-    const todoIndex = todos.findIndex((todo) => todo.Text === text); //busca el indice de la tarea a completar
-    newTodos[todoIndex].completed = !newTodos[todoIndex].completed; //marca la tarea como completada
-    saveTodos(newTodos); //actualiza el estado de las tareas
+    const todoIndex = todos.findIndex(
+      (todo) => (todo.Text || todo.text) === text,
+    ); //busca el indice de la tarea a completar
+    if (todoIndex >= 0) {
+      newTodos[todoIndex].completed = !newTodos[todoIndex].completed; //marca la tarea como completada
+      saveTodos(newTodos); //actualiza el estado de las tareas
+    }
   };
 
   const deleteTodo = (text) => {
     const newTodos = [...todos]; //copia del array de tareas
-    const todoIndex = newTodos.findIndex((todo) => todo.Text === text); //busca el indice de la tarea a completar
-    newTodos.splice(todoIndex, 1); //marca la tarea como completada
-    saveTodos(newTodos); //actualiza el estado de las tareas
+    const todoIndex = newTodos.findIndex(
+      (todo) => (todo.Text || todo.text) === text,
+    ); //busca el indice de la tarea a completar
+    if (todoIndex >= 0) {
+      newTodos.splice(todoIndex, 1); //marca la tarea como completada
+      saveTodos(newTodos); //actualiza el estado de las tareas
+    }
   };
   return (
     <TodoContext.Provider
