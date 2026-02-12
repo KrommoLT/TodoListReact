@@ -16,11 +16,32 @@
   height: 64px;
   width: 64px;
   z-index: 1101;
-
   transform: rotate(0);
   transition: 0.3s ease;
 }
 
 .CreateTodoButton:hover {
   transform: rotate(224deg);
+}
+
+/* Tablet (481px - 768px) */
+@media (max-width: 768px) {
+  .CreateTodoButton {
+    height: 56px;
+    width: 56px;
+    font-size: 40px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .CreateTodoButton {
+    height: 48px;
+    width: 48px;
+    font-size: 32px;
+    bottom: 80px;
+    right: 16px;
+  }
 }

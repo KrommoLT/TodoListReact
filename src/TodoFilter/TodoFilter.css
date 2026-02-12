@@ -22,3 +22,23 @@
 .TodoFilter:focus {
   background: #d9d9d9;
 }
+
+/* Tablet (481px - 768px) */
+@media (max-width: 768px) {
+  .TodoFilter {
+    margin: 0 16px;
+    height: 56px;
+    font-size: 1.2rem;
+    border-radius: 12px;
+  }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .TodoFilter {
+    margin: 0 12px;
+    height: 48px;
+    font-size: 1rem;
+    border-radius: 10px;
+  }
+}

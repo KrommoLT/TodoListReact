@@ -1,8 +1,32 @@
 .empty-todos-container {
-  position: absolute;
-  top: calc(100% - 92px);
-  left: calc(80% - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #9e78cf;
   font-size: 1.5rem;
   font-family: Inter, sans-serif;
+  margin-left: 1rem;
+  white-space: nowrap;
+}
+
+.empty-todos-text {
+  margin: 0;
+  padding: 0;
+}
+
+/* Tablet (481px - 768px) */
+@media (max-width: 768px) {
+  .empty-todos-container {
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+  }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .empty-todos-container {
+    font-size: 1rem;
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
 }
