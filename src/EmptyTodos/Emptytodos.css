@@ -1,0 +1,8 @@
+.empty-todos-container {
+  position: absolute;
+  top: calc(100% - 92px);
+  left: calc(80% - 60px);
+  color: #9e78cf;
+  font-size: 1.5rem;
+  font-family: Inter, sans-serif;
+}

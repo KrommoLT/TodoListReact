@@ -7,7 +7,7 @@ function TodoFilter() {
 
   return (
     <input
-      placeholder="Tarea"
+      placeholder="Busca tu tarea"
       className="TodoFilter"
       value={searchValue}
       onChange={(event) => {

@@ -35,7 +35,12 @@ function AppUi({}) {
 
         <TodoFilter />
 
-        <CreateTodoButton setOpenModal={setOpenModal} />
+        <div className="button-empty-container">
+          <CreateTodoButton setOpenModal={setOpenModal} />
+          {!loading && !error && searchedTodos.length === 0 && !openModal && (
+            <EmptyTodos />
+          )}
+        </div>
 
         <TodoList>
           {loading && (
@@ -48,7 +53,6 @@ function AppUi({}) {
             </>
           )}
           {error && <TodosError />}
-          {!loading && !error && searchedTodos.length === 0 && <EmptyTodos />}
 
           {searchedTodos.map((todo) => (
             <TodoItem
@@ -60,6 +64,7 @@ function AppUi({}) {
             />
           ))}
         </TodoList>
+
         {openModal && (
           <Modal>
             <TodoForm />
