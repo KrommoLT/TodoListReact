@@ -56,3 +56,43 @@
     background-position: 0% 50%;
   }
 }
+
+/* Tablet (481px - 768px) */
+@media (max-width: 768px) {
+  .Loading-container {
+    margin-top: 18px;
+    border-radius: 8px;
+    padding: 10px 0;
+  }
+
+  .LoadingTodo-text {
+    font-size: 16px;
+    margin: 20px 0 20px 20px;
+  }
+
+  .LoadingTodo-CompleteIcon,
+  .LoadingTodo-deleteIcon {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .Loading-container {
+    margin-top: 16px;
+    border-radius: 8px;
+    padding: 8px 0;
+  }
+
+  .LoadingTodo-text {
+    font-size: 14px;
+    margin: 16px 0 16px 16px;
+  }
+
+  .LoadingTodo-CompleteIcon,
+  .LoadingTodo-deleteIcon {
+    height: 36px;
+    width: 36px;
+  }
+}

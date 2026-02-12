@@ -35,3 +35,36 @@
 .Icon-container-check:hover .Icon-svg {
   fill: #4caf50;
 }
+
+/* Tablet (481px - 768px) */
+@media (max-width: 768px) {
+  .Icon {
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+  }
+
+  .Icon-svg {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .Icon {
+    height: 36px;
+    width: 36px;
+    font-size: 18px;
+  }
+
+  .Icon-svg {
+    height: 18px;
+    width: 18px;
+  }
+
+  .Icon-container-delete {
+    top: -8px;
+    right: 8px;
+  }
+}
