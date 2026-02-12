@@ -24,6 +24,14 @@
   transform: rotate(224deg);
 }
 
+.CreateTodoButton--open {
+  transform: rotate(224deg);
+}
+
+.CreateTodoButton--open:hover {
+  transform: rotate(224deg);
+}
+
 /* Tablet (481px - 768px) */
 @media (max-width: 768px) {
   .CreateTodoButton {

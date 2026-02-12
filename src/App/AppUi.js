@@ -36,11 +36,12 @@ function AppUi({}) {
         <TodoFilter />
 
         <div className="button-empty-container">
-          <CreateTodoButton setOpenModal={setOpenModal} />
-          {!loading && !error && searchedTodos.length === 0 && !openModal && (
-            <EmptyTodos />
-          )}
+          <CreateTodoButton setOpenModal={setOpenModal} openModal={openModal} />
         </div>
+
+        {!loading && !error && searchedTodos.length === 0 && !openModal && (
+          <EmptyTodos />
+        )}
 
         <TodoList>
           {loading && (
