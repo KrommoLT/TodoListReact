@@ -1,4 +1,5 @@
 .empty-todos-container {
+  width: 100%;
   position: fixed;
   bottom: 40px;
   right: 100px;

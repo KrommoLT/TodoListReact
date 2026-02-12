@@ -13,6 +13,11 @@ label {
   font-size: 2.5rem;
   color: #9e78cf;
   margin-bottom: 20px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
 }
 textarea {
   background-color: #15101c;
@@ -71,6 +76,7 @@ textarea {
   label {
     font-size: 2rem;
     margin-bottom: 15px;
+    height: 50px;
   }
 
   textarea {
@@ -104,6 +110,7 @@ textarea {
   label {
     font-size: 1.5rem;
     margin-bottom: 10px;
+    height: 40px;
   }
 
   textarea {

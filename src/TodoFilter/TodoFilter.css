@@ -4,13 +4,17 @@
   border: 2px solid #3e1671;
   margin: 0 24px;
   height: 64px;
-  width: 100%;
+  min-height: 64px;
+  max-height: 64px;
+  width: 30%;
+  max-width: 30%;
   font-size: 1.5rem;
   text-align: center;
   font-family: "Montserrat";
   font-weight: 400;
   color: #1e1e1f;
   box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
+  overflow: hidden;
 }
 
 .TodoFilter::placeholder {
@@ -26,19 +30,29 @@
 /* Tablet (481px - 768px) */
 @media (max-width: 768px) {
   .TodoFilter {
+    width: 85%;
+    max-width: 85%;
     margin: 0 16px;
     height: 56px;
+    min-height: 56px;
+    max-height: 56px;
     font-size: 1.2rem;
     border-radius: 12px;
+    overflow: hidden;
   }
 }
 
 /* Mobile (max-width: 480px) */
 @media (max-width: 480px) {
   .TodoFilter {
+    width: 90%;
+    max-width: 90%;
     margin: 0 12px;
     height: 48px;
+    min-height: 48px;
+    max-height: 48px;
     font-size: 1rem;
     border-radius: 10px;
+    overflow: hidden;
   }
 }
