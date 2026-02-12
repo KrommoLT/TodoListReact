@@ -10,8 +10,12 @@ function TodoFilter() {
       placeholder="Busca tu tarea"
       className="TodoFilter"
       value={searchValue}
+      translate="no"
       onChange={(event) => {
         setSearchValue(event.target.value);
+      }}
+      onBlur={() => {
+        setSearchValue("");
       }}
     />
   );

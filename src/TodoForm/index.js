@@ -8,8 +8,10 @@ function TodoForm() {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    addTodo(newTodoValue);
-    setOpenModal(false);
+    if (newTodoValue.trim()) {
+      addTodo(newTodoValue);
+      setOpenModal(false);
+    }
   };
 
   const onCancel = () => {
