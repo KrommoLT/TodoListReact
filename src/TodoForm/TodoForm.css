@@ -60,3 +60,25 @@ textarea {
   border: 2px solid red;
   color: red;
 }
+
+@media (max-width: 450px) {
+  form {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+  label {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  textarea {
+    font-size: 1.5rem;
+    height: 40%;
+    width: 90%;
+    margin-top: 20px;
+  }
+  .TodoForm-buttonContainer {
+    display: flex;
+    margin-top: 60px;
+  }
+}

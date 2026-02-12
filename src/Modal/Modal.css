@@ -25,3 +25,10 @@
   width: 50%;
   overflow: auto;
 }
+@media (max-width: 450px) {
+  .modal-content {
+    width: 90%;
+    height: 60%;
+    margin: 0 5px;
+  }
+}
